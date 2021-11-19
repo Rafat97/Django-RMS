@@ -30,10 +30,9 @@ class Menu(models.Model):
     meta_data = models.JSONField(null=True, default=dict, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
 
     def __str__(self):
-        return self.restaurant.restaurant_name + " -- " + str(self.created_at)+  " -- "  + str(self.id)
+        return self.restaurant.restaurant_name + " -- " + str(self.created_at) + " -- " + str(self.id)
 
     def save(self, *args, **kwargs):
         if self.id:
@@ -41,18 +40,17 @@ class Menu(models.Model):
             if find.is_active == self.is_active:
                 super().save(*args, **kwargs)
             else:
-                find2 = Menu.objects.filter(restaurant=self.restaurant,is_active__exact=True)
+                find2 = Menu.objects.filter(
+                    restaurant=self.restaurant, is_active__exact=True)
                 if find2:
-                    find2.update(is_active = False)
+                    find2.update(is_active=False)
         else:
-            find2 = Menu.objects.filter(restaurant=self.restaurant,is_active__exact=True)
+            find2 = Menu.objects.filter(
+                restaurant=self.restaurant, is_active__exact=True)
             if find2:
-                find2.update(is_active = False)
+                find2.update(is_active=False)
 
         super().save(*args, **kwargs)
-           
-
-        
 
 
 class Item(models.Model):

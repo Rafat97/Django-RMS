@@ -27,12 +27,12 @@ class VoteAddView(GenericAPIView):
 
     def get_queryset(self):
         return Vote.objects.all()
-    
+
     def post(self, request):
         request.data['user'] = request.user.id
 
         print(request.data)
-        
+
         serializer = VotingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

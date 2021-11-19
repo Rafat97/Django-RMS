@@ -24,8 +24,8 @@ class EmployUserSerializer(serializers.HyperlinkedModelSerializer):
         validated_data['username'] = validated_data['email']
         validated_data['is_staff'] = True
         employ_created = User.objects.create_user(**validated_data)
-        my_group = Group.objects.get(name = 'Employ')
+        my_group = Group.objects.get(name='Employ')
         print(my_group)
-        my_group.user_set.add(employ_created) 
+        my_group.user_set.add(employ_created)
         print(employ_created)
         return employ_created

@@ -6,10 +6,8 @@ import os
 class Command(BaseCommand):
     help = 'Added superuser'
 
-    ALL_PERMISSION = ['account', 'token_blacklist' , 'employapp', 'restaurantapp','votingapp']
-
-
-
+    ALL_PERMISSION = ['account', 'token_blacklist',
+                      'employapp', 'restaurantapp', 'votingapp']
 
     def handle(self, *args, **options):
         # user_obj = User.objects.get(id=2)

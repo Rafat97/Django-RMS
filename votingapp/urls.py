@@ -1,9 +1,9 @@
 from django.urls import path, include
-from .views import  VoteAddView
+from .views import VoteAddView
 # EmployApiView,
 urlpatterns = [
     # path('create/', add_employ,name='creating-employ'),
-    path('create/', VoteAddView.as_view() ,name='adding-vote'),
+    path('create/', VoteAddView.as_view(), name='adding-vote'),
 ]
 
 

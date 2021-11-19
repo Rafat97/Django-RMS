@@ -84,7 +84,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware', # Add here
+    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',  # Add here
 ]
 
 

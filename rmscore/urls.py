@@ -74,7 +74,7 @@ schema_view = get_schema_view(
 
 #     queryset = Group.objects.all()
 #     serializer_class = GroupSerializer
-#     permission_classes = [permissions.IsAuthenticated]       
+#     permission_classes = [permissions.IsAuthenticated]
 # Routers provide an easy way of automatically determining the URL conf.
 
 router = routers.DefaultRouter()
@@ -89,10 +89,12 @@ admin.site.index_title = "Welcome to RMS Admin Portal"
 
 
 urlpatterns = [
+    path('', schema_view.with_ui('swagger',
+                                 cache_timeout=0), name='schema-swagger-ui'),
+
     path('doc/', schema_view.with_ui('redoc',
          cache_timeout=0), name='schema-redoc'),
-    url(r'^swagger/$', schema_view.with_ui('swagger',
-        cache_timeout=0), name='schema-swagger-ui'),
+
 
 
     path('api/v1/token/', EmailTokenObtainPairView.as_view(),
@@ -100,10 +102,10 @@ urlpatterns = [
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
-    path('api/v1/', include(router.urls)), 
-    path('api/v1/', include('restaurantapp.urls')), 
+    path('api/v1/', include(router.urls)),
+    path('api/v1/', include('restaurantapp.urls')),
     path('api/v1/employ/', include('employapp.urls')),
-    path('api/v1/vote/', include('votingapp.urls')), 
+    path('api/v1/vote/', include('votingapp.urls')),
 
 
 

@@ -63,7 +63,7 @@ from drf_yasg import openapi
 class EmployAddView(GenericAPIView):
     serializer_class = EmployUserSerializer
     permission_classes = [permissions.AllowAny]
-    
+
     def post(self, request):
         serializer = EmployUserSerializer(data=request.data)
         if serializer.is_valid():
