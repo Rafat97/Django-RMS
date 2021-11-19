@@ -4,7 +4,7 @@
 ![Build Status](https://img.shields.io/github/languages/count/Rafat97/Django-RMS?style=for-the-badge)
 ![Build Status](https://img.shields.io/github/languages/top/Rafat97/Django-RMS?style=for-the-badge)
 ![Build Status](https://img.shields.io/static/v1?label=python&message=>=3.8%20Tested&color=importent&style=for-the-badge)
-![Build Status](https://img.shields.io/github/license/Rafat97/Django-RMS?style=for-the-badge)
+<!-- ![Build Status](https://img.shields.io/github/license/Rafat97/Django-RMS?style=for-the-badge) -->
 ![Build Status](https://img.shields.io/static/v1?label=project%20type&message=website&style=for-the-badge)
 # About 
 
