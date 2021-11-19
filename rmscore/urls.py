@@ -33,7 +33,7 @@ from restaurantapp.views import (
     ItemSet,
     MenuSet
 )
-from emailauth.views import EmailTokenObtainPairView
+from emailauth.views import EmailTokenObtainPairView,LogoutView
 import employapp
 
 
@@ -44,38 +44,9 @@ schema_view = get_schema_view(
         description=f"""Company needs internal service for its’ employees which helps them to make a decision
         on lunch place. Each restaurant will be uploading menus using the system every day
         over API and employees will vote for the menu before leaving for lunch.""",
-        #   terms_of_service="https://www.google.com/policies/terms/",
-        #   contact=openapi.Contact(email="contact@snippets.local"),
-        #   license=openapi.License(name="BSD License"),
     ),
     public=True,
 )
-
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['url', 'username', 'email', 'is_staff']
-
-# # ViewSets define the view behavior.
-
-# class GroupSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = Group
-#         fields = ['url', 'name']
-
-# class UserViewSet(viewsets.ModelViewSet):
-
-#     queryset = User.objects.all().order_by('-date_joined')
-#     serializer_class = UserSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-
-# class GroupViewSet(viewsets.ModelViewSet):
-
-#     queryset = Group.objects.all()
-#     serializer_class = GroupSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-# Routers provide an easy way of automatically determining the URL conf.
 
 router = routers.DefaultRouter()
 # router.register(r'users', UserViewSet)
@@ -101,6 +72,7 @@ urlpatterns = [
          name='token_obtain_pair'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('api/v1/token/logout/', LogoutView.as_view(), name='token_logout'),
 
     path('api/v1/', include(router.urls)),
     path('api/v1/', include('restaurantapp.urls')),
