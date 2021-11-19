@@ -1,0 +1,28 @@
+
+FROM python:3.8
+
+# ARG buildtime_variable=default_value 
+
+ENV PYTHONUNBUFFERED=1 \
+    PROJECT_DEBUG=True \
+    DEFAULT_SUPER_USERNAME=admin \
+    DEFAULT_SUPER_EMAIL=admin@domain.com \
+    DEFAULT_SUPER_PASSWORD=admin \
+    POSTGRES_DB_DATABASENAME=rms_db \
+    POSTGRES_DB_USERNAME=admin \
+    POSTGRES_DB_PASSWORD=admin123 \
+    POSTGRES_DB_HOST=postgres \
+    POSTGRES_DB_PORT=5432 
+
+
+WORKDIR /code
+
+COPY . /code/
+
+RUN pip install -r requirements.txt
+
+RUN python manage.py migrate 
+RUN python manage.py makesuper 
+RUN python manage.py creategroup
+RUN python manage.py runserver 0.0.0.0:80
+

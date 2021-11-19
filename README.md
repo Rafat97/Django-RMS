@@ -30,3 +30,8 @@ The winner restaurant should not be the winner for 3 consecutive  working  days
 
 # High level Architecture
 
+# Important Commend
+
+1. python manage.py migrate
+
+2. python manage.py runserver
