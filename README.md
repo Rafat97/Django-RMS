@@ -13,7 +13,18 @@ menu  before leaving  for  lunch.
 
 # Features 
 
-1. Authentication 
+| Api Features 	| Completed	| 
+|------	|:--------:	|
+| Authentication | ✅ 	|
+| Creating  restaurant 	| ✅ | 
+| Uploading  menu  for  restaurant 	| ✅ | 
+| Creating  employee 	| ✅ | 
+| Getting  current  day  menu  	| ✅ | 
+| Voting for restaurant menu   	| ✅ | 
+| Getting results for the current day. The winner restaurant should not be the winner for 3 consecutive  working  days    	| ❎ | 
+| Logout 	| ✅ | 
+
+<!-- 1. Authentication 
 
 2. Creating  restaurant 
 
@@ -27,7 +38,7 @@ menu  before leaving  for  lunch.
 
 7. Getting results for the current day. The winner restaurant should not be the winner for 3 consecutive  working  days 
 
-8. Logout 
+8. Logout  -->
 
 # High level Architecture
 
@@ -84,4 +95,4 @@ $ http://localhost:9080/
 
 | |  |
 | ----------- | ----------- |
-| ![Emdadul Haque Rafat](https://rafat97.github.io/static/c3688eb99d1fef50023a121e3abc5fa6/e8044/my-image.jpg)      | `Name:` Emdadul Haque <br /><br /> `Email:` rafathaque1997@gmail.com <br /><br /> `Website :` https://rafat97.github.io/ <br /><br />`Github:` https://github.com/Rafat97 <br /><br /> `Linkedin:` https://www.linkedin.com/in/rafat-haque-173131139/   |
+| ![Emdadul Haque Rafat](https://rafat97.github.io/static/c3688eb99d1fef50023a121e3abc5fa6/e8044/my-image.jpg)      | `Name:` Emdadul Haque <br /><br /> `Email:` rafathaque1997@gmail.com <br /><br /> `Website :` https://rafat97.github.io/ <br /><br />`Github:` https://github.com/Rafat97 <br /><br /> `Linkedin:` https://www.linkedin.com/in/emdadul-haque-173131139/   |
