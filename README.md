@@ -25,8 +25,7 @@ menu  before leaving  for  lunch.
 
 6. Voting for restaurant menu 
 
-7. Getting results for the current day. 
-The winner restaurant should not be the winner for 3 consecutive  working  days 
+7. Getting results for the current day. The winner restaurant should not be the winner for 3 consecutive  working  days 
 
 8. Logout 
 
